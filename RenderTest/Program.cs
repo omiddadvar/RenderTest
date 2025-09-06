@@ -1,4 +1,4 @@
-using RenderTest;
+﻿using RenderTest;
 using RenderTest.Middlewares;
 using Microsoft.OpenApi.Models; // Add this using
 
@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "RenderTest API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "We Love ESSI ❤️❤️❤️", Version = "v1" });
 });
 
 builder.Services.AddOpenApi();
