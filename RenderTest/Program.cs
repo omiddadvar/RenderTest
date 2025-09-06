@@ -1,4 +1,5 @@
 using RenderTest;
+using RenderTest.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 
 app.UseAuthorization();
 
