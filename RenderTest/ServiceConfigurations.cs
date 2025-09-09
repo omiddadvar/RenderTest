@@ -41,9 +41,9 @@ public static class ServiceConfigurations
         {
             var configuration = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("redis"));
             configuration.AbortOnConnectFail = false;
-            configuration.ConnectRetry = 3;
-            configuration.ConnectTimeout = 5000;
-            configuration.SyncTimeout = 5000;
+            configuration.ConnectRetry = 5;
+            configuration.ConnectTimeout = 20000;
+            configuration.SyncTimeout = 20000;
 
             return ConnectionMultiplexer.Connect(configuration);
         });
