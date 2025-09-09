@@ -21,7 +21,7 @@ public class RedisService : IRedisService
     public async Task<T> GetAsync<T>(string key)
     {
         var value = await _cache.GetStringAsync(key);
-        return value == null ? default : JsonSerializer.Deserialize<T>(value);
+        return value is null ? default : JsonSerializer.Deserialize<T>(value);
     }
 
     public async Task SetAsync<T>(string key, T value, TimeSpan? expiry = null)
