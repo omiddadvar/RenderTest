@@ -19,7 +19,6 @@ builder.AddServiceConfigurations();
 var app = builder.Build();
 
 //if (app.Environment.IsDevelopment())
-if (true)
 {
     app.UseSwagger();
     app.UseSwaggerUI(c =>

@@ -1,7 +1,9 @@
 ﻿namespace RenderTest;
 
 using Microsoft.EntityFrameworkCore;
+using RenderTest.Abstractions.Services;
 using RenderTest.Data;
+using RenderTest.Services;
 
 public static class ServiceConfigurations
 {
@@ -33,5 +35,7 @@ public static class ServiceConfigurations
             options.Configuration = builder.Configuration.GetConnectionString("redis");
             options.InstanceName = "RenderTest:"; // Optional: prefix for all keys
         });
+
+        builder.Services.AddScoped<IRedisService, RedisService>();
     }
 }
