@@ -100,9 +100,7 @@ public class CategoryController(
     }
 
     [HttpPut("/update-redis")]
-    public async Task<IActionResult> UpdateCategoriesInRedis(
-        [FromRoute] int id,
-        CancellationToken cancellationToken)
+    public async Task<IActionResult> UpdateCategoriesInRedis(CancellationToken cancellationToken)
     {
         var categories = context.Categories.ToList();
         if (categories is null)
@@ -118,9 +116,7 @@ public class CategoryController(
     }
 
     [HttpGet("/read-redis")]
-    public async Task<IActionResult> GetCategoriesInRedis(
-    [FromRoute] int id,
-    CancellationToken cancellationToken)
+    public async Task<IActionResult> GetCategoriesInRedis(CancellationToken cancellationToken)
     {
         if (!await redis.ExistsAsync(REDIS_KEY))
         {
